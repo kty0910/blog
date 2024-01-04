@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    position: relative;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.banner img{
+    height: 200px;
+}
+
+.hr {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(180, 234, 240);
+    margin: 0px auto;
+}
+
+.section {
+    margin: 30px 0px;
+}
+
+.section-title input {
+    width: 70%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+}
+
+hr {
+    width: 70%;
+    margin: 15px auto;
+}
+
+.section-content textarea {
+    resize: none;
+    border: none;
+    width: 70%;
+    height: 600px;
+    font-size: 15px;
+    margin: 10px 0px;
+}
+
+.section-title input:focus,.section-content textarea:focus {
+    outline: none;
+}
+
+.section-bar {
+    display: flex;
+    width: 67%;
+    justify-content: space-between;
+    margin: 20px auto;
+    align-content: center;
+}
+
+.section-bar button {
+    background-color: white;
+    border: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.write-hr {
+    width: 80%;
+    height: 2px;
+    background-color: rgb(180, 234, 240);
+    margin: 20px auto;
+}
+
+.footer {
+    background-color: rgb(180, 234, 240);
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    align-items: center;
+}
+
+.footer-left {
+    text-align: right;
+}
+
+.footer-left a {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-hr {
+    width: 3px;
+    height: 170px;
+    background-color: black;
+    margin: 0px 20px;
+}
+
+.footer-right-login {
+    display: unset;
+    margin-bottom: 18px;
+}
+
+.footer-right-login h1 {
+    margin: 5px 0px 10px 0px;
+    color: black;
+}
+
+.footer-right-login input {
+    background-color: rgb(180, 234, 240);
+    border: 2px solid black;
+    color: black;
+    font-size: 15px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+}
+
+.footer-right-login input:focus {
+    outline: none;
+}
+
+.footer-right-login input::placeholder {
+    color: black;
+}
+
+.footer-right-login button {
+    background-color: dimgray;
+    color: rgb(180, 234, 240);
+    border: none;
+    width: 48%;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 3px;
+}
+
+.footer-right-user {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.footer-right-admin {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.userName {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.option a {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+}

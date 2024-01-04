@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.banner img{
+    height: 200px;
+}
+
+.top {
+    background-color: rgb(180, 234, 240);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.middle {
+    background-image: url(../images/testImage.jpeg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.write-title {
+    width: 900px;
+    color: black;
+    font-size: 60px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.write-info {
+    display: flex;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.write-option a {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom {
+    background-color: rgb(180, 234, 240);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.section {
+    width: 60%;
+    margin: auto;
+}
+
+.section-content {
+    width: 860px;
+    margin: 20px;
+    font-size: 20px;
+    text-align: left;
+    word-break: break-all;
+}
+
+.answer-each {
+    margin: 10px auto;
+}
+
+.writer-profile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.writer-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.writer-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.answer-each div {
+    width: 900px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+.answer-text {
+    font-size: 18px;
+}
+
+.answer-date {
+    font-size: 12px;
+}
+
+.answer-hr {
+    width: 900px;
+    margin: 20px auto;
+}
+
+.write-option {
+    display: flex;
+    gap: 5px;
+    right: 15px;
+    top: 15px;
+    color: black;
+    justify-content: right;
+    font-size: 13px;
+}
+
+.section-hr {
+    width: 900px;
+}
+
+.section-answer-input {
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 900px;
+}
+
+.answer-input textarea {
+    resize: none;
+    width: 870px;
+    height: 150px;
+    border: none;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.answer-input textarea:focus {
+    outline: none;
+}
+
+.input-bar {
+    border-top: 1px solid black;
+    text-align: right;
+}
+
+.input-bar button {
+    background-color: white;
+    border: none;
+    border-left: 1px solid black;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.footer {
+    background-color: rgb(180, 234, 240);
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    align-items: center;
+}
+
+.footer-left {
+    text-align: right;
+}
+
+.footer-left a {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.footer-hr {
+    width: 3px;
+    height: 170px;
+    background-color: black;
+    margin: 0px 20px;
+}
+
+.footer-right-login {
+    display: unset;
+    margin-bottom: 18px;
+}
+
+.footer-right-login h1 {
+    margin: 5px 0px 10px 0px;
+    color: black;
+}
+
+.footer-right-login input {
+    background-color: rgb(180, 234, 240);
+    border: 2px solid black;
+    color: black;
+    font-size: 15px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+}
+
+.footer-right-login input:focus {
+    outline: none;
+}
+
+.footer-right-login input::placeholder {
+    color: black;
+}
+
+.footer-right-login button {
+    background-color: dimgray;
+    color: rgb(180, 234, 240);
+    border: none;
+    width: 48%;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 3px;
+}
+
+.footer-right-user {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.footer-right-admin {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.userName {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.option a {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <a href="/logout">
+                <img src="images/logo.png">
+            </a>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="section">
+            <form action="/account" method="post" th:if="${session.account} == null">
+                <div class="userId">
+                    <input type="text" name="id" placeholder="Id" maxlength="20">
+                </div>
+
+                <div class="userPw">
+                    <input type="password" name="pw" placeholder="Pw" maxlength="20">
+                </div>
+
+                <div class="userName">
+                    <input type="text" name="name" placeholder="Name" maxlength="20">
+                </div>
+
+                <div class="userSubmit">
+                    <button type="submit">가입</button>
+                </div>
+            </form>
+
+            <form action="/account" method="post" th:if="${session.account} != null">
+                <div class="session-userId">
+                    <input type="text" name="id" placeholder="Id" th:value="${session.account.id}" maxlength="20">
+                </div>
+
+                <div class="session-userPw">
+                    <input type="password" name="pw" placeholder="Pw" th:value="${session.account.pw}" maxlength="20">
+                </div>
+
+                <div class="session-userName">
+                    <input type="text" name="name" placeholder="Name" th:value="${session.account.name}" maxlength="20">
+                </div>
+
+                <div class="session-userSubmit">
+                    <button type="submit">가입</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="hr"></div>
+    </div>
+</body>
+</html>

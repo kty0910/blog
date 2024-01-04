@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <a href="/">
+                <img src="images/logo.png">
+            </a>
+        </div>
+
+        <div class="header">
+            <div class="top">
+                text
+            </div>
+
+            <div class="middle">
+                <div class="write-title" th:text="${board.title}">
+                    
+                </div>
+
+                <div class="write-info">
+                    <div class="write-date" th:text="${#temporals.format(board.writeDate,'yyyy-MM-dd HH:mm:ss')}"></div>
+                    |
+                    <div class="write-category" th:text="${board.category}"></div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                text
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-content" th:text="${board.content}">
+                
+            </div>
+
+            <div class="write-option" th:if="${session.user} == null"></div>
+
+            <div class="write-option" th:unless="${session.user} == null or ${session.user.id} != 'admin'">
+                <div class="write-update">
+                    <a th:href="@{/board/update(seq=${board.seq})}">수정</a>
+                </div>
+                |
+                <div class="write-delete">
+                    <a th:href="@{/board/delete/idadmin/pw1234(seq=${board.seq})}">삭제</a>
+                </div>
+            </div>
+
+            <hr class="section-hr">
+
+            <div class="section-answer">
+                <div class="answer-each" th:each="i:${answers}">
+                    <div class="writer-profile">
+                        <img src="/images/testImage.jpeg">
+                        <div class="writer-name" th:text="${i.writer}"></div>
+                    </div>
+                    <div class="answer-text" th:text="${i.answer}"></div>
+                    <div class="answer-date" th:text="${#temporals.format(i.answerDate,'yyyy-MM-dd HH:mm:ss')}"></div>
+                    <hr class="answer-hr">
+                </div>
+            </div>
+
+            <div class="section-answer-input">
+                <form method="post" th:if="${session.user} != null">
+                    <div class="answer-input">
+                        <textarea name="answer" placeholder="악플은 안돼용"></textarea>
+                        <input type="hidden" name="seq" value="${board.seq}">
+                        <input type="hidden" name="writer" th:value="${session.user.name}">
+                    </div>
+
+                    <div class="input-bar">
+                        <button type="submit">입력</button>
+                    </div>
+                </form>
+
+                <form method="post" th:unless="${session.user} != null">
+                    <div class="answer-input">
+                        <textarea name="answer" placeholder="로그인 후 작성 가능합니다" disabled></textarea>
+                    </div>
+
+                    <div class="input-bar">
+                        <button type="submit" disabled>입력</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <a href="/">support1</a><br>
+                <a href="/">support</a><br>
+                <a href="/">support3</a><br>
+                <a href="/">support</a><br>
+                <a href="/">support5</a>
+            </div>
+
+            <div class="footer-hr">
+
+            </div>
+
+            <div class="footer-right-login" th:if="${session.user} == null">
+                <h1>Account</h1>
+                <form action="/" method="post">
+                    <input class="id" type="text" name="id" placeholder="Id"><br>
+                    <input class="pw" type="password" name="pw" placeholder="Password"><br>
+                    <button class="login" type="submit">로그인</button>
+                    <button class="account" type="button">회원가입</button>
+                </form>
+            </div>
+
+            <div class="footer-right-admin" th:unless="${session.user} == null or ${session.user.id} != 'admin'">
+                <div class="userName" th:text="${session.user.name}"></div>
+
+                <div class="option">
+                    <a class="logout" href="/logout">로그아웃</a>
+                    <a class="useroption" href="/write">글쓰기</a>
+                </div>
+            </div>
+
+            <div class="footer-right-user" th:unless="${session.user} == null or ${session.user.id} == 'admin'">
+                <div class="userName" th:text="${session.user.name}"></div>
+
+                <div class="option">
+                    <a class="logout" href="/logout">로그아웃</a>
+                    <a class="useroption" href="/">계정관리</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
