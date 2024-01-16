@@ -28,21 +28,6 @@ public class HtmlController {
     @Autowired
     UserRepository userRepository;
 
-    // @GetMapping("/")
-    // public String homeLogin(
-    //     Model model,
-    //     HttpSession session
-    // ) {
-    //     List<Blog> blogs = blogRepository.findAllByOrderBySeqDesc();
-    //     model.addAttribute("blogs", blogs);
-
-    //     List<Blog> top = blogRepository.findAllByOrderBySearchCountDesc();
-    //     model.addAttribute("top", top);
-
-    //     session.invalidate();
-
-    //     return "html/homeLogin";
-    // }
     @GetMapping("/")
     public String home(Model model) {
         List<Blog> blogs = blogRepository.findAllByOrderBySeqDesc();
@@ -62,11 +47,6 @@ public class HtmlController {
     ) {
         BlogUser user;
         user = userRepository.findByIdAndPw(id, pw);
-        // int count = userRepository.findByPwAndId(pw, id).size();
-
-        // if (count<1) {
-        //     return "html/homeLogin";
-        // }
 
         session.setAttribute("user", user);
 
